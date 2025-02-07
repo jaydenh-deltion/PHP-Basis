@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza </title>
+    <title>opdracht2</title>
 </head>
 <body>
-    <h2></h2>
+    
+<?php
+
+for ($i = 1; $i <= 5; $i++){
+
+    echo '<img src="img/afb' . $i.'.jpg" alt="jan">';
+}
+
+
+
+?>
+
 </body>
 </html>
