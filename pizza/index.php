@@ -43,7 +43,7 @@
         <br>
         <input type="submit" value="bestellen ">
         <br></br>
-        <h2> u heeft dit besteld:</h2>
+        <h2> U heeft dit besteld:</h2>
     </form>
 
 </body>
