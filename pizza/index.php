@@ -7,24 +7,24 @@
 </head>
 <body>
     <h2>circulare delicioso</h2>
-    <form action="winkelmandje.php" method="post">
+    <form action="" method="post">
         <h3>Pizza's</h3>
 
         <label>
         <img src="img/Pizza Tirato.jpeg" alt=" De pizza tirato">
-            <input type="checkbox" name="pizza[]" value="Pizza Tirato,10.50"> Pizza Tirato (€ 10,50)
+            <input type="radio" name="pizza" value="Pizza Tirato,10.50"> Pizza Tirato (€ 10,50)
         </label>
 
         <br>
         <img src="img/Pizza-Seppi.jpg" alt="De Pizza Seppi">
         <br>
         <label>
-            <input type="checkbox" name="pizza[]" value="Pizza Seppi,11.50"> Pizza Seppi (€ 11,50)
+            <input type="radio" name="pizza" value="Pizza Seppi,11.50"> Pizza Seppi (€ 11,50)
         </label>
         <br>
             <img src="img/Pizza Spianata Piccante.jpeg" alt=" De pizza Spianata Piccante">
         <label>
-            <input type="checkbox" name="pizza[]" value="Pizza Spianata Piccante,12.50"> Pizza Spianata Piccante (€ 12,50)
+            <input type="radio" name="pizza" value="Pizza Spianata Piccante,12.50"> Pizza Spianata Piccante (€ 12,50)
         </label>
         <br>
         <h3>Extra's</h3>
@@ -41,64 +41,54 @@
             <input type="checkbox" name="bezorgen" value="Ik wil de pizza laten bezorgen,3.50"> Ik wil de pizza laten bezorgen (€ 3,50)
         </label>
         <br>
-        <input type="submit" value="Toevoegen aan winkelmandje">
+        <input type="submit" value="bestellen ">
+        <br></br>
+        <h2> u heeft dit besteld:</h2>
     </form>
 
 </body>
 </html>
 
 <?php
-
 session_start();
 
-if($_SERVER['REQUEST_METHOD'] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $pizza = $_POST["pizza"];
     $extra = $_POST["extra"];
     $bezorgen = $_POST["bezorgen"];
 
-    if(!empty($pizza)){
-        foreach ($pizza as $p){
-            list($name, $prijs) = explode(",", $p);
-            $_SESSION['winkelmandje'][] = array('name' => $name, 'prijs' => $prijs);
+    list($pizzaNaam, $pizzaPrijs) = explode(",", $pizza);
+    list($bezorgenNaam, $bezorgenPrijs) = explode(",", $bezorgen);
+
+    $totaalPrijs = $pizzaPrijs;
+
+    if (!empty($extra)) {
+        foreach ($extra as $e) {
+            list($extraNaam, $extraPrijs) = explode(",", $e);
+            $totaalPrijs += $extraPrijs;
         }
     }
 
-    if (!empty($extra)){
-        foreach ($extra as $e){
-            list($name, $prijs) = explode(",", $e);
-            $_SESSION['winkelmandje'][] = array('name' => $name, 'prijs' => $prijs);
-        }
-    }
+    $totaalPrijs += $bezorgenPrijs;
 
-    if (!empty($bezorgen)){
-        list($name, $prijs) = explode(",", $bezorgen);
-        $_SESSION['winkelmandje'][] = array('name' => $name, 'prijs' => $prijs);
-    }
-}
-if(isset($_SESSION['winkelmandje'])) {
-    echo "Uw winkelmandje:<br>";
-    foreach ($_SESSION['winkelmandje'] as $item) {
-        echo $item['name'] . ": € " . $item['prijs'] . "<br>";
-    }
-    echo "<form action='bestellen.php' method='post'><input type='submit' value='Bestellen'></form>";
-} else {
-    echo "Uw winkelmandje is leeg.";
-}
-session_start();
-
-if(isset($_SESSION['winkelmandje'])) {
     echo "Bedankt voor uw bestelling!<br>";
-    $totaal = 0;
-    foreach ($_SESSION['winkelmandje'] as $item) {
-        echo "U heeft een " . $item['name'] . " besteld: € " . $item['prijs'] . "<br>";
-        $totaal += $item['prijs'];
+    echo "U heeft een " . $pizzaNaam . " besteld: € " . $pizzaPrijs . "<br>";
+
+    if (!empty($extra)) {
+        foreach ($extra as $e) {
+            list($extraNaam, $extraPrijs) = explode(",", $e);
+            echo "U heeft " . $extraNaam . " besteld: € " . $extraPrijs . "<br>";
+        }
     }
-    if ($totaal > 0) {
-        echo "Als de pizzabezorger komt moet u € " . $totaal . " betalen!";
+
+    if ($bezorgenPrijs > 0) {
+        echo "U wilt de pizza laten bezorgen: € " . $bezorgenPrijs . "<br>";
+        echo "Als de pizzabezorger komt moet u € " . $totaalPrijs . " betalen!";
+    } else {
+        echo "U komt de pizza zelf afhalen<br>";
+        echo "U betaalt € " . $totaalPrijs . " aan onze kassa.";
     }
-    unset($_SESSION['winkelmandje']);
-} else {
-    echo "Uw winkelmandje is leeg.";
+    
 }
 ?>
 </body>
