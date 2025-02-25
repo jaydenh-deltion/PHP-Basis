@@ -53,13 +53,15 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $pizza = $_POST["pizza"];
-    $extra = $_POST["extra"];
-    $bezorgen = $_POST["bezorgen"];
+    $pizza = $_POST["pizza"];// halt de waarde van het veld pizza uide de post array
+    $extra = $_POST["extra"];//haalt de waarde van het veld extra uit ed post array 
+    $bezorgen = $_POST["bezorgen"];// haalt de waarde uit het veld bezorgen uit de post array 
+    //deze regel controleert hof het een POST aanvraagmethode is als dat zo is wordt de if gebruikt 
 
     list($pizzaNaam, $pizzaPrijs) = explode(",", $pizza);
     list($bezorgenNaam, $bezorgenPrijs) = explode(",", $bezorgen);
-
+//deze regels splitsen de strings met de pizza en de bezorggegevens in 2 afzonderlijke 
+//variabelen. de naam en prijs 
     $totaalPrijs = $pizzaPrijs;
 
     if (!empty($extra)) {
@@ -70,6 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 
     $totaalPrijs += $bezorgenPrijs;
+    //deze regels berekenen de totale prijs van de bestelling eerd pizza daarna extra en tot slot bezorging 
 
     echo "Bedankt voor uw bestelling!<br>";
     echo "U heeft een " . $pizzaNaam . " besteld: € " . $pizzaPrijs . "<br>";
@@ -90,6 +93,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
     
 }
+//dit geeft de besteling weer aan de gebruiker eest komt de pizza daarna de extra's en tot slot de gekozen ophaal/bezorgoptie.
+//als de de pizza wordt bezorgt dan wordt de totaal prijs aan de gebrukergetoon en wordt btetaald aand e bezorger
+//Als de gebruiker de pizza zelf afhaalt, wordt de totale prijs weergegeven die moet worden betaald aan de kassa.
 ?>
 </body>
 </html>
