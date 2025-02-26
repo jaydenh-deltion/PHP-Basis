@@ -96,6 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 //dit geeft de besteling weer aan de gebruiker eest komt de pizza daarna de extra's en tot slot de gekozen ophaal/bezorgoptie.
 //als de de pizza wordt bezorgt dan wordt de totaal prijs aan de gebrukergetoon en wordt btetaald aand e bezorger
 //Als de gebruiker de pizza zelf afhaalt, wordt de totale prijs weergegeven die moet worden betaald aan de kassa.
+// de PHP is met ai gemaakt. ik hoop dat ik bij de login en data base meer zelf kan.
 ?>
 </body>
 </html>
