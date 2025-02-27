@@ -1,70 +1,21 @@
-body{
-  .login-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    padding: 40px;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
-  }
-  
-  .login-box h2 {
-    margin: 0 0 30px;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .login-box .user-box {
-    position: relative;
-  }
-  
-  .login-box .user-box input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-  }
-  .login-box .user-box label {
-    position: absolute;
-    top:0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: .5s;
-  }
-  
-  .login-box .user-box input:focus ~ label,
-  .login-box .user-box input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: #03e9f4;
-    font-size: 12px;
-  }
-  
-  .login-box form a {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #03e9f4;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .5s;
-    margin-top: 40px;
-    letter-spacing: 4px
+body {
+  background-color: zwart; /* Achtergrondkleur zwart */
+  text-align: center; /* Tekst uitlijnen in het midden */
+  color: wit; /* Tekstkleur wit */
 }
+
+input[type="text"], input[type="password"] {
+  display: block; /* Input-velden onder elkaar plaatsen */
+  margin: 10px auto; /* Marge toevoegen voor ruimte tussen velden */
+  padding: 10px; /* Padding toevoegen voor ruimte binnen velden */
+  width: 200px; /* Breedte van input-velden */
+  border: 1px solid wit; /* Rand om input-velden */
+  border-radius: 5px; /* Ronde hoeken voor input-velden */
+  background-color: #333; /* Achtergrondkleur van input-velden */
+  color: wit; /* Tekstkleur in input-velden */
 }
-  
+
+input[type="text"]:focus, input[type="password"]:focus {
+  background-color: #444; /* Achtergrondkleur van input-velden bij focus */
+  border: 1px solid #666; /* Rand om input-velden bij focus */
+}

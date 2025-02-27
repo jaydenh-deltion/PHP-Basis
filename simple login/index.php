@@ -5,27 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>inlog</title>
 
-   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div></div>
-  <form method="post">
-     <input type="text" name="u" placeholder="Username"
-    required="required"/>
-    <input type="password" name="p"
-    placeholder="passworld" required="required"/>
-    <button type="submit" class=""> login</button> 
-      </form>
+
+  <form method="POST" action="toegang.php">
+
+    Username: <input type="text" name="name">
+    Password: <input type="password" name="password">
+    <input type="submit"> 
+
+    </form>
     </div>
+
     <?php
 
-if($_POST['name']=='jadyen' and $_POST['password']== '1234 '){
-  header('location: toegang.php');
-} else {
-  header('location: geen_toegang.php');
+session_start();
+
+if($_SERVER['REQUEST_METHOD']=='POST'){
+  session_destroy();
 }
-
-
 
 ?>
 </body>

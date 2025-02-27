@@ -7,3 +7,11 @@
 </head>
 <body>
     <H1>Je hebt geen toegang</H1>
+
+    <a href="index.php"> terug naar login pagina</a>
+    
+
+
+
+</body>
+</html>
