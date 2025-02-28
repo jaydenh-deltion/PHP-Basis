@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <H1>Je hebt geen toegang</H1>
-
-    <a href="index.php"> terug naar login pagina</a>
+    <div>
+    <H1>helaas je hebt geen toegang </H1>
+    </div>
+<div>
+    <label>
+    <a href="index.php">  ga terug naar login pagina</a>
+    </label>
+</div>
     
 
 
