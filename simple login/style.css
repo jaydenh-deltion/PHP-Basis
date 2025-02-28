@@ -1,21 +1,11 @@
 body {
-  background-color: zwart; /* Achtergrondkleur zwart */
-  text-align: center; /* Tekst uitlijnen in het midden */
-  color: wit; /* Tekstkleur wit */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-input[type="text"], input[type="password"] {
-  display: block; /* Input-velden onder elkaar plaatsen */
-  margin: 10px auto; /* Marge toevoegen voor ruimte tussen velden */
-  padding: 10px; /* Padding toevoegen voor ruimte binnen velden */
-  width: 200px; /* Breedte van input-velden */
-  border: 1px solid wit; /* Rand om input-velden */
-  border-radius: 5px; /* Ronde hoeken voor input-velden */
-  background-color: #333; /* Achtergrondkleur van input-velden */
-  color: wit; /* Tekstkleur in input-velden */
-}
-
-input[type="text"]:focus, input[type="password"]:focus {
-  background-color: #444; /* Achtergrondkleur van input-velden bij focus */
-  border: 1px solid #666; /* Rand om input-velden bij focus */
+form {
+  text-align: center;
 }
