@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         // als dat niet zo is wordt je doorgestuurd naar geen_toegang pagina 
     }
 }
-
+// heb deze code gemaakt met de uitleg van het filmpje die er stond. ook heeft gert geholpen 
 ?>
 
 <!DOCTYPE html>
