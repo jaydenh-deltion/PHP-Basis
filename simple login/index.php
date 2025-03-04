@@ -24,12 +24,16 @@
 <?php
 
 session_start();
+//start een sessie of hersteld een bestaande sessie.
 
   
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
+  // deze regel controleert of het een POST verzoek is naar de server. zo ja dan gaat die naar if 
   if(!empty($_POST['klopt'])){
+    //controleert of het veld klopt in het post verzoek niet leeg is als het veld niet leeg is word de if uitgevoerd 
     session_destroy();
+    // deze regel vernietigd de huidige sessie alle gegevens die zijn opgeslagen worden verwijderd. 
   }
 }
 

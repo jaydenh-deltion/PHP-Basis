@@ -3,8 +3,13 @@ session_start();
 
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
+// controleert of het verzoek dat naar de server is gestuurd een POST verzoek is
+// als dat zo is wordt de code hier onder uit gevoerd. 
     $username = $_POST['name'];
     $password = $_POST['password'];
+
+// deze regels halen de gebruikersnaam en het wachtwoord op de de POST verzoek
+// de gebruikersnaam en wachtwoord worden opgeslgen als variabelen
 
 
     $gebruikers = array(
@@ -17,12 +22,20 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     
     foreach($gebruikers as $gebruiker){
         if($gebruiker['name'] === $username && hash('sha1', $password) === $gebruiker['password']){ 
+//deze regel controleert of de gebruikersnaam en wachtwoord overeenkomen mer het opgegeven.
+// als de combinatie klopt wordt de code hieronder uitgevoerd. 
+
              echo "ingelogd" . $username;
              $_SESSION['is_ingelogd'] = 'ingelogt';
+             // deze regel geeft een bericht dat de gebruiker is ingelogd.
+             // de sessie-variable 'is_ingelogd ' wordt ingesteld op ingelogt.
         }
     }
+
     if(empty($_SESSION['is_ingelogd'])){
         header('location: geen_toegang.php');
+        // deze regel controleerd of is_ingelogd is ingesteld.
+        // als dat niet zo is wordt je doorgestuurd naar geen_toegang pagina 
     }
 }
 
