@@ -31,11 +31,13 @@ session_start();
 if($_SERVER['REQUEST_METHOD']=='POST'){
   // deze regel controleert of het een POST verzoek is naar de server. zo ja dan gaat die naar if 
   if(!empty($_POST['klopt'])){
-    //controleert of het veld klopt in het post verzoek niet leeg is als het veld niet leeg is word de if uitgevoerd 
+    //controleert of het veld klopt in het post verzoek niet leeg is. als het veld niet leeg is word de if uitgevoerd.
+    // hier is die if er niet dus hij wordt niet uitgevoerd. 
     session_destroy();
     // deze regel vernietigd de huidige sessie alle gegevens die zijn opgeslagen worden verwijderd. 
   }
 }
+//ik weet nog niet precies hoe dit werkt de php maar als het er niet in staat werkt het niet meer zoals het hoort.
 
 ?>
 </body>
