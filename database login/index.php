@@ -26,6 +26,7 @@ $password = "wachtwoord";
 $dbname = "database";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
+
 if ($conn->connect_error){
     die("verbinden is mislukt: " .$conn->connect_error);
 }
@@ -33,11 +34,20 @@ if ($conn->connect_error){
 $naam = $_POST['username'];
 $wachtwoord = $_POST['password'];
 
+$sql = "SELECT * FORM users WHERE username = '$naam' AND password = '$wachtwoord'" . hash('sha1', $password) . "'";
+$result = $conn->query($sql);
 
+if ($result->num_rows > 0) {
+    session_start();
+    $_SESSION['ingelogd'] = true;
+    header('location: toegang.php');
+    exit;
+} else{
+    header('location: geen-toegang.php');
+    echo "fout bij inloggen probeer opnieuw";
+}
 
-
-
-
+$conn->close();
 ?>
 
 </body>
