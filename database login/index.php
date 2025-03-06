@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <h1> login </h1>
@@ -31,6 +32,12 @@ if ($conn->connect_error){
 
 $naam = $_POST['username'];
 $wachtwoord = $_POST['password'];
+
+
+
+
+
+
 ?>
 
 </body>
