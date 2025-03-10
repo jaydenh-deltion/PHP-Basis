@@ -1,5 +1,5 @@
 <?php
-
+// als er 1 van deze niet is ingevoerd dan krijgt die de die melding 
 if(empty($_POST["name"])){
     die("name is required");
 }
@@ -34,11 +34,22 @@ if ( ! $stmt ->prepare($sql)){
     die ("SQL error: " . $mysqli->error);
 }
 
+$stmt->bind_param("sss",
+                  $_POST["name"],
+                  $_POST["email"],
+                  $password_hash);
+                  
+if ($stmt->execute()) {
 
-$stmt->bind_param("sss", $_POST["name"], $_POST["email"], $password_hash);
-
-$stmt->execute();
-
-echo "Signup succesfull"
-
+    header("Location: signup-success.html");
+    exit;
+    
+} else {
+    
+    if ($mysqli->errno === 1062) {
+        die("email already taken");
+    } else {
+        die($mysqli->error . " " . $mysqli->errno);
+    }
+}
 ?>
