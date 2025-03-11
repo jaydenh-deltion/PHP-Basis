@@ -57,8 +57,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <label for="password">Password</label>
         <input type="password" name="password" id="password">
         
-        <button>Log in</button>
-    </form>
+        <button>Log in</button> 
+        <button type="button" onclick="location.href='registratie.html'">if you don't have a account dont worry sign in hear</button>
+</form>
     
 </body>
 </html>
