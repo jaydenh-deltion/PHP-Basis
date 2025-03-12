@@ -10,6 +10,6 @@ $result = $mysqli->query($sql);
 
 $is_available = $result->num_rows === 0;
 
-header("COntent-Type: application/json");
+header("Content-Type: application/json");
 
 echo json_encode(["available" => $is_available]);

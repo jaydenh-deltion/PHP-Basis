@@ -24,17 +24,17 @@ if (isset($_SESSION["user_id"])) {
 </head>
 <body>
     
-    <h1>home</h1>
+    <h1>Home </h1>
 
     <?php if (isset($user)): ?>
 
-    <p>hello <?= htmlspecialchars($user["name"]) ?></p>
+    <p>Hello, <?= htmlspecialchars($user["name"]) ?><br>Welcome to the home page</p>
 
-    <p><a href="logout.php"> log out</a></p>
+    <p><a href="logout.php"> you can log out hear</a></p>
 
     <?php else: ?>
 
-    <p><a href="login.php"> login</a> or <a href="registratie.html"> sign up </a></p>
+    <p><a href="login.php"> you can login hear</a> or <a href="registratie.html"> sign up </a></p>
 
 <?php endif; ?>
 
