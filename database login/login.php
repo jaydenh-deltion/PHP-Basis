@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
     
-    $is_invalid = true;
+    $is_invalid = true;// deze regel wordt uitgevoerd als de login poging is mislukt 
 }
 
 ?>
@@ -49,9 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     <h1>Login</h1>
     
-    <?php if ($is_invalid): ?>
+    <?php if ($is_invalid): // deze regel controleert of de variable waar is als dat zo is wordt de if uitgevoerd ?> 
         <em>Invalid login</em>
-    <?php endif; ?>
+    <?php endif; // sluit de if af ?>
     
     <form method="post">
         <label for="email">email</label>

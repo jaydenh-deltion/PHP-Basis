@@ -55,22 +55,17 @@ $stmt->bind_param("sss",
                   $_POST["email"],
                   $password_hash);
                   
- // deze regel voert de query uit
-if ($stmt->execute()) {
-
+ 
+ try {
+    $stmt->execute();// deze regel voert de query uit
     header("Location: signup-success.html");
     exit;
-
-    // als de SQL query niet kan worden uitgevoed word dit in gang gezet 
-} else {
-    
-    // controleert of de mail al in gebruik is door de 1062 foutmelding (duplicatie entry fout)
-    if ($mysqli->errno === 1062) {
-        die("email already taken");
-
-        //geen 1062 dan wordt de error weer gegeven 
+} catch (mysqli_sql_exception $e) {
+    if ($e->getCode() == 1062) {
+        header("Location: email-ingebruik.html");
+        exit;
     } else {
-        die($mysqli->error . " " . $mysqli->errno);
+        die("Fout bij het aanmaken van de gebruiker: " . $e->getMessage());
     }
 }
 ?>
