@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    height: 100vh;
+    margin: 0;
+}
+
+.flag {
+    width: 33.33%;
+    height: 100%;
+}
+
+.flag.green{
+    background-color: green;
+}
+
+.flag.white{
+    background-color: white;
+    
+}
+.flag.red{
+    background-color: red;
+}

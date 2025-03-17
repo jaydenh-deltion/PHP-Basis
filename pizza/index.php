@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>circulare delicioso</title>
+    <link rel="stylesheet" href="stylepizza.css">
 </head>
 <body>
     <h2>circulare delicioso</h2>
     <form action="" method="post">
+
         <h3>Pizza's</h3>
 
         <label>
