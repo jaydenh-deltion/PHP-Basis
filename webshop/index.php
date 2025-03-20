@@ -7,20 +7,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 </head>
 <body>
-    <h2>ons assortiment</h2>
+    <h2>ons assortiment:</h2>
 
     <form action="" method="post">
-             <h3> berkenhout</h3>
-         <img src="img/berken hout.jpeg" alt=" berken hout ">
-       <input type="radio" name="berkenhout" name="berkenhout" value="berkenhout €10,99 per m2"> berkenhout €10,99 per m2
+                 <h3> berkenhout</h3>
+            <img src="img/berken hout.jpeg" alt=" berken hout ">
+         <br>
+       <input type="radio" name="berkenhout" name="berkenhout" value="berkenhout €65,99 per m2"> berkenhout €10,99 per m2
    
-            <h3>walnoot hout</h3>
-        <img src="img/walnoot hout.jpeg" alt="waloothout">
-    <input type="radio" name="walnoot hout" name="walnoot" value="walnoot hout €14,99 per m2"> walnoot hout €14,99 per m2 
+                <h3>walnoot hout</h3>
+            <img src="img/walnoot hout.jpeg" alt="waloothout">
+        <br>
+    <input type="radio" name="walnoot hout" name="walnoot" value="walnoot hout €99,99 per m2"> walnoot hout €14,99 per m2 
 
-            <h3>eikenhout</h3>
-        <img src="img/eikenhout.jpeg" alt="eikenhout">
-    <input type="radio" name="eikenhout" name="eikenhout " value="eikenhout €12,99 per m2"> eikenhout €12,99 per m2 
+                <h3>eikenhout</h3>
+            <img src="img/eikenhout.jpeg" alt="eikenhout">
+        <br>
+    <input type="radio" name="eikenhout" name="eikenhout " value="eikenhout €109,99 per m2"> eikenhout €12,99 per m2 
    
              <h4>rechthoekige tafel</h4>
          <input type="radio" name="rechthoekige tafel" name="tafel rechthoek">
@@ -29,23 +32,34 @@
 
 <h4>rondetafel</h4><br>
     <input type="radio" name="rondetafel" name="tafel rond">
-        <h4> diamater in mm</h4>
+             <h4> diamater in mm</h4>
         <input type="number" name="diameter" >
         <br>
-
-        <button type="button" onclick="location.href='winkelmandje.php'">bestel en ga naar mandje
-</form>
-
-</body>
-</html>
-
+    <button type="button" onclick="location.href='winkelmandje.php'">bestel en ga naar mandje
+        </form>
+    
 <?php
 
 session_start();
 
 if ($_SERVER['REQUEST_METHOD']== "POST"){
     $berkenhout = $_POST['berkenhout'];
+    $walnoot = $_POST['walnoot'];
+    $eikenhout = $_POST['eikenhout'];
+
+        $rechthoekige_tafel = $_POST['rechthoekige tafel'];
+        $breedte = $_POST['breedte'];
+        $lengte = $_POST['lengte'];
+
+    $rondetafel = $_POST['rondetafel'];
+    $diameter = pi() * $input / 2;
+
+
+
+
 }
 
 
 ?>
+</body>
+</html>
