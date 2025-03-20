@@ -6,6 +6,11 @@
     <title>winkelmndje </title>
 </head>
 <body>
+    <form action="" method="get">
+        <h2>bedankt voor uw bestelling. uw bestelling is succesvol geplaatst</h2><br>
+        <h3> u heeft dit besteld:</h3>
+        
+    </form>
     
 </body>
 </html>
